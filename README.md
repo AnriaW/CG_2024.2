@@ -35,11 +35,13 @@ O programa imprime os pontos calculados da reta no formato:
 ( 8 , 5 ) error = 0.49
 ```
 
+![Plot do Bresenham](Plot-Bresenham.png)
+
 ## Execução
 Para executar o código, basta rodá-lo em um interpretador Python 3. Ele imprimirá os pontos da reta no console.
 
 ## Melhorias Possíveis
-- Adicionar suporte para retas com declive negativo, como realizado para o y.
+- Adicionar suporte para retas com declive negativo para o x com decrementação.
 
 ## Autor
 Este script foi desenvolvido para demonstrar o funcionamento do algoritmo de Bresenham aplicado ao desenho de retas.
