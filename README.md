@@ -35,7 +35,7 @@ O programa imprime os pontos calculados da reta no formato:
 ( 8 , 5 ) error = 0.49
 ```
 
-![Plot do Bresenham](Plot-Bresenham.png)
+![Plot do Bresenham](/Bresenham/Plot-Bresenham.png)
 
 ## Execução
 Para executar o código, basta rodá-lo em um interpretador Python 3. Ele imprimirá os pontos da reta no console.
