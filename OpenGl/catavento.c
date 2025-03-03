@@ -1,8 +1,10 @@
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int frame = 0;
+int sentido = 0;
 
 void init(void){
     glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -32,7 +34,7 @@ void display(void){
     };
     
     int ordem[4] = {0, 1, 2, 3};
-    int novaOrdem[4] = {1, 2, 3, 0};
+    int novaOrdem[4] = {0, 2, 1, 3};
     
     for(int i = 0; i < 4; i++){
         ordem[i] = novaOrdem[(i + frame) % 4];
@@ -70,17 +72,25 @@ void display(void){
 }
 
 void timer(int value){
-    frame = (frame + 3) % 4;
+    if (sentido == 0){
+        frame = (frame + 1) % 4;
+    }
+    else{
+        frame = (frame + 3) % 4;
+    }
     glutPostRedisplay();
     glutTimerFunc(500, timer, 0);
 }
 
 int main(int argc, char **argv){
+    printf("\nDigite 0 para girar no sentido anti-horario ou 1 para horario: ");
+    scanf("%d", &sentido);
+    
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     glutInitWindowPosition(200, 200);
-    glutCreateWindow("Catavento Giratorio");
+    glutCreateWindow("Catavento Giratório");
     init();
     glutDisplayFunc(display);
     glutTimerFunc(500, timer, 0);
