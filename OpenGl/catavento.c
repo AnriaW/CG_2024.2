@@ -82,9 +82,16 @@ void timer(int value){
     glutTimerFunc(500, timer, 0);
 }
 
+void keyboard(unsigned char key, int x, int y){
+    if (key == 'a' || key == 'A' || key == '0') {
+        sentido = 0; 
+    } else if (key == 'h' || key == 'H' || key == '1') {
+        sentido = 1; 
+    }
+}
+
 int main(int argc, char **argv){
-    printf("\nDigite 0 para girar no sentido anti-horario ou 1 para horario: ");
-    scanf("%d", &sentido);
+    printf("\nPressione 'A' ou '0' para girar no sentido anti-horario e 'H' ou '1'para horario.\n\n");
     
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -94,5 +101,6 @@ int main(int argc, char **argv){
     init();
     glutDisplayFunc(display);
     glutTimerFunc(500, timer, 0);
+    glutKeyboardFunc(keyboard); // funcao para mudar o sentido do catavento
     glutMainLoop();
 }
