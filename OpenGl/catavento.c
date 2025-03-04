@@ -1,3 +1,7 @@
+/*
+Para mudar a direção do catavento que começa no sentido anti-horário, é preciso apertar "h" ou "1" e assim, ele irá de mexer no sentido horário, para fazer ele voltar para o anti-horário se deve apertar "a" ou "0"
+*/
+
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <stdlib.h>
@@ -101,6 +105,8 @@ int main(int argc, char **argv){
     init();
     glutDisplayFunc(display);
     glutTimerFunc(500, timer, 0);
-    glutKeyboardFunc(keyboard); // funcao para mudar o sentido do catavento
+
+    // funcao para mudar o sentido do catavento
+    glutKeyboardFunc(keyboard);
     glutMainLoop();
 }
